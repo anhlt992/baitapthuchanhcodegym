@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<form>
+    <label for="amount">so tien:</label>
+    <input type="number" name="amount" id="amount" placeholder="nhap so tien can chuyen doi" />
+    <select name="fromCurrency" id="fromcurrency">
+        <option value="USD">USD</option>
+        <option value="VND">VND</option>
+    </select>
+    <select name="toCurrency" id="tocurrency">
+        <option value="USD">USD</option>
+        <option value="VND">VND</option>
+    </select>
+    <button type="button" onclick="convert()">Convert</button>
+    <div id="result"></div>
+</form>
+<script>
+    function convert() {
+        let amount = document.getElementById("amount").value;
+        let fromCurrency = document.getElementById("fromcurrency").value;
+        let toCurrency = document.getElementById("tocurrency").value;
+        let result;
+        const exchangeRate = 25000;
+        if (fromCurrency ==="VND") {
+            result = amount / exchangeRate;
+            } else  {
+            result = amount * exchangeRate;
+        }
+    document.getElementById("result").innerHTML =result
+    }
+</script>
+</body>
+</html>
